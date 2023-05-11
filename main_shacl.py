@@ -1,4 +1,4 @@
-#%%
+from rdflib import*
 from pyshacl import validate
 from pylib.DMNParser import *
 from pylib.classes_relations import *
