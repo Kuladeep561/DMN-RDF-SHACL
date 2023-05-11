@@ -28,27 +28,27 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix furn: <http://pi.pauwel.be/voc/furniture#> .
-@prefix IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#> .
+@prefix inst: <https://www.ugent.be/myAwesomeFirstBIMProject#> .
+@prefix seas: <https://w3id.org/seas/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix lbd: <https://linkebuildingdata.org/LBD#> .
 @prefix fog: <https://w3id.org/fog#> .
-@prefix dicm: <https://w3id.org/digitalconstruction/0.5/Materials#> .
+@prefix ocqa: <https://w3id.org/ocqa#> .
+@prefix opm: <https://w3id.org/opm#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix furn: <http://pi.pauwel.be/voc/furniture#> .
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#> .
+@prefix smls: <https://w3id.org/def/smls-owl#> .
+@prefix IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#> .
+@prefix beo: <https://pi.pauwel.be/voc/buildingelement#> .
+@prefix schema1: <http://schema.org/> .
 @prefix dicp: <https://w3id.org/digitalconstruction/0.5/Processes#> .
+@prefix dicm: <https://w3id.org/digitalconstruction/0.5/Materials#> .
+@prefix mep: <http://pi.pauwel.be/voc/distributionelement#> .
 @prefix dmn: <http://www.DMN-RDF.org/DMN#> .
 @prefix dice: <https://w3id.org/digitalconstruction/0.5/Entities#> .
-@prefix bot: <https://w3id.org/bot#> .
-@prefix seas: <https://w3id.org/seas/> .
-@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#> .
-@prefix mep: <http://pi.pauwel.be/voc/distributionelement#> .
-@prefix schema1: <http://schema.org/> .
 @prefix dica: <https://w3id.org/digitalconstruction/0.5/Agents#> .
-@prefix ocqa: <https://w3id.org/ocqa#> .
-@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
-@prefix beo: <https://pi.pauwel.be/voc/buildingelement#> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix smls: <https://w3id.org/def/smls-owl#> .
-@prefix opm: <https://w3id.org/opm#> .
-@prefix lbd: <https://linkebuildingdata.org/LBD#> .
-@prefix inst: <https://www.ugent.be/myAwesomeFirstBIMProject#> .
+@prefix bot: <https://w3id.org/bot#> .
     dmn:prepare_inspections
     a sh:NodeShape ; 
     sh:target [
@@ -85,27 +85,27 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX xml: <http://www.w3.org/XML/1998/namespace>
-PREFIX furn: <http://pi.pauwel.be/voc/furniture#>
-PREFIX IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#>
+PREFIX inst: <https://www.ugent.be/myAwesomeFirstBIMProject#>
+PREFIX seas: <https://w3id.org/seas/>
+PREFIX unit: <http://qudt.org/vocab/unit/>
+PREFIX lbd: <https://linkebuildingdata.org/LBD#>
 PREFIX fog: <https://w3id.org/fog#>
-PREFIX dicm: <https://w3id.org/digitalconstruction/0.5/Materials#>
+PREFIX ocqa: <https://w3id.org/ocqa#>
+PREFIX opm: <https://w3id.org/opm#>
+PREFIX props: <http://lbd.arch.rwth-aachen.de/props#>
+PREFIX furn: <http://pi.pauwel.be/voc/furniture#>
+PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#>
+PREFIX smls: <https://w3id.org/def/smls-owl#>
+PREFIX IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#>
+PREFIX beo: <https://pi.pauwel.be/voc/buildingelement#>
+PREFIX schema1: <http://schema.org/>
 PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+PREFIX dicm: <https://w3id.org/digitalconstruction/0.5/Materials#>
+PREFIX mep: <http://pi.pauwel.be/voc/distributionelement#>
 PREFIX dmn: <http://www.DMN-RDF.org/DMN#>
 PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#>
-PREFIX bot: <https://w3id.org/bot#>
-PREFIX seas: <https://w3id.org/seas/>
-PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#>
-PREFIX mep: <http://pi.pauwel.be/voc/distributionelement#>
-PREFIX schema1: <http://schema.org/>
 PREFIX dica: <https://w3id.org/digitalconstruction/0.5/Agents#>
-PREFIX ocqa: <https://w3id.org/ocqa#>
-PREFIX props: <http://lbd.arch.rwth-aachen.de/props#>
-PREFIX beo: <https://pi.pauwel.be/voc/buildingelement#>
-PREFIX unit: <http://qudt.org/vocab/unit/>
-PREFIX smls: <https://w3id.org/def/smls-owl#>
-PREFIX opm: <https://w3id.org/opm#>
-PREFIX lbd: <https://linkebuildingdata.org/LBD#>
-PREFIX inst: <https://www.ugent.be/myAwesomeFirstBIMProject#>
+PREFIX bot: <https://w3id.org/bot#>
     SELECT ?this WHERE {
     ?this a <https://pi.pauwel.be/voc/buildingelement#Stair> .
 ?Property a <https://w3id.org/opm#Property> .
@@ -147,27 +147,27 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX xml: <http://www.w3.org/XML/1998/namespace>
-PREFIX furn: <http://pi.pauwel.be/voc/furniture#>
-PREFIX IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#>
+PREFIX inst: <https://www.ugent.be/myAwesomeFirstBIMProject#>
+PREFIX seas: <https://w3id.org/seas/>
+PREFIX unit: <http://qudt.org/vocab/unit/>
+PREFIX lbd: <https://linkebuildingdata.org/LBD#>
 PREFIX fog: <https://w3id.org/fog#>
-PREFIX dicm: <https://w3id.org/digitalconstruction/0.5/Materials#>
+PREFIX ocqa: <https://w3id.org/ocqa#>
+PREFIX opm: <https://w3id.org/opm#>
+PREFIX props: <http://lbd.arch.rwth-aachen.de/props#>
+PREFIX furn: <http://pi.pauwel.be/voc/furniture#>
+PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#>
+PREFIX smls: <https://w3id.org/def/smls-owl#>
+PREFIX IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#>
+PREFIX beo: <https://pi.pauwel.be/voc/buildingelement#>
+PREFIX schema1: <http://schema.org/>
 PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+PREFIX dicm: <https://w3id.org/digitalconstruction/0.5/Materials#>
+PREFIX mep: <http://pi.pauwel.be/voc/distributionelement#>
 PREFIX dmn: <http://www.DMN-RDF.org/DMN#>
 PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#>
-PREFIX bot: <https://w3id.org/bot#>
-PREFIX seas: <https://w3id.org/seas/>
-PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#>
-PREFIX mep: <http://pi.pauwel.be/voc/distributionelement#>
-PREFIX schema1: <http://schema.org/>
 PREFIX dica: <https://w3id.org/digitalconstruction/0.5/Agents#>
-PREFIX ocqa: <https://w3id.org/ocqa#>
-PREFIX props: <http://lbd.arch.rwth-aachen.de/props#>
-PREFIX beo: <https://pi.pauwel.be/voc/buildingelement#>
-PREFIX unit: <http://qudt.org/vocab/unit/>
-PREFIX smls: <https://w3id.org/def/smls-owl#>
-PREFIX opm: <https://w3id.org/opm#>
-PREFIX lbd: <https://linkebuildingdata.org/LBD#>
-PREFIX inst: <https://www.ugent.be/myAwesomeFirstBIMProject#>
+PREFIX bot: <https://w3id.org/bot#>
         CONSTRUCT {
 ?Inspection_Dimension_of_the_Riser a <http://www.DMN-RDF.org/DMN#Inspection_Dimension_of_the_Riser>.
 ?ISCode a <http://www.DMN-RDF.org/DMN#ISCode>.
