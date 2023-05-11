@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="InspectionsOfCuring" name="Curing Inspections DMN" namespace="http://camunda.org/schema/1.0/dmn" camunda:diagramRelationId="173ecca7-6bdc-4411-8854-19104d934e63" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
+  <decision id="Decision_CuringInspections" name="Geometric Inspections of staircase for Residential building">
+    <informationRequirement id="InformationRequirement_012d53o">
+      <requiredInput href="#InputData_1c9ahxo"/>
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1wzbsto">
+      <requiredInput href="#InputData_0nxzade"/>
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1gxiys2">
+      <requiredInput href="#InputData_17xnyhj"/>
+    </informationRequirement>
+    <knowledgeRequirement id="KnowledgeRequirement_123dhv6">
+      <requiredKnowledge href="#BusinessKnowledgeModel_1akkqt8"/>
+    </knowledgeRequirement>
+    <decisionTable id="DecisionTable_0azx1hv" hitPolicy="COLLECT">
+      <input id="InputClause_1c4rptc" label="Stairs class" biodi:width="269">
+        <inputExpression id="LiteralExpression_0a1c6c0" typeRef="string">
+          <text>Stair_Class</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0r6297l" label="Connected Property">
+        <inputExpression id="LiteralExpression_1ph0x67" typeRef="string">
+          <text>connected_Property</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_06os5dl" label="Property class" biodi:width="324">
+        <inputExpression id="LiteralExpression_0q0js8v" typeRef="string">
+          <text>Property_Class</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_01gb9sw" label="Name of Inspection" name="Inspection_class" typeRef="string"/>
+      <output id="OutputClause_1fen69i" label="Norm" name="Norm" typeRef="string">
+        <outputValues id="UnaryTests_1phet3p">
+          <text/>
+        </outputValues>
+      </output>
+      <output id="OutputClause_0vmq1as" label="Agent" name="Agent" typeRef="string">
+        <outputValues id="UnaryTests_133tph4">
+          <text/>
+        </outputValues>
+      </output>
+      <output id="OutputClause_08fcv2c" label="Inspection Equipment" name="hasInspection_Equipment_class" typeRef="string">
+        <outputValues id="UnaryTests_0kml40i">
+          <text/>
+        </outputValues>
+      </output>
+      <output id="OutputClause_03jcpud" label="Frequency" name="Frequency" typeRef="string">
+        <outputValues id="UnaryTests_1uyx9sw">
+          <text/>
+        </outputValues>
+      </output>
+      <output id="OutputClause_05agc26" label="Location" name="Location_class" typeRef="string">
+        <outputValues id="UnaryTests_0rljoe6">
+          <text>"At working site"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_1g3mhsq" label="Inspection Procedure" name="Inspection_Procedure_class" typeRef="string">
+        <outputValues id="UnaryTests_1s8ex88">
+          <text/>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0d3t05r">
+        <inputEntry id="UnaryTests_0osqlql">
+          <text>"Stair"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mw7m2n">
+          <text>"actualNumberOfRisers"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uv7nbk">
+          <text>"Property"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wd31yd">
+          <text>"Inspection_Number_Of_Risers"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t6kgu2">
+          <text>"ISCode"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02mtwi2">
+          <text>"Agent"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03qgukz">
+          <text>"InspectionEquipment"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yr5c1i">
+          <text>"one_time"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1aj2zbu">
+          <text>"Location"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1428sd5">
+          <text>"InspectionProcedure"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0c1zsrd">
+        <inputEntry id="UnaryTests_116d7xz">
+          <text>"Stair"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q2e1gr">
+          <text>"maximumRiserHeight"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hyclqb">
+          <text>"Property"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j9rsjl">
+          <text>"Inspection_Dimension_of_the_Riser"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o9gctp">
+          <text>"ISCode"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dhuwv9">
+          <text>"Agent"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1g5zh53">
+          <text>"InspectionEquipment"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tj1yar">
+          <text>"one_time"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1er9c27">
+          <text>"Location"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wj4z8i">
+          <text>"InspectionProcedure"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_050jo4g">
+        <inputEntry id="UnaryTests_1yx4f3q">
+          <text/>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n7qaeo">
+          <text/>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1twqfks">
+          <text/>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bkms7c">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17rxrbv">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04ahy4p">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0902cng">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jaij0i">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17deide">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a9dkxi">
+          <text/>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="InputData_17xnyhj" name="BIM Model"/>
+  <inputData id="InputData_0nxzade" name="Schedule"/>
+  <inputData id="InputData_1c9ahxo" name="BOQ/Specifications/Contract"/>
+  <knowledgeSource id="KnowledgeSource_0sa76ie" name="IS 456"/>
+  <knowledgeSource id="KnowledgeSource_1y6b9ya" name="MORTH 1712"/>
+  <businessKnowledgeModel id="BusinessKnowledgeModel_1akkqt8" name="Knowledge aquired to make DMN table">
+    <authorityRequirement id="AuthorityRequirement_1vwsyky">
+      <requiredAuthority href="#KnowledgeSource_0sa76ie"/>
+    </authorityRequirement>
+    <authorityRequirement id="AuthorityRequirement_0gskmwx">
+      <requiredAuthority href="#KnowledgeSource_1y6b9ya"/>
+    </authorityRequirement>
+  </businessKnowledgeModel>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_CuringInspections">
+        <dc:Bounds height="80" width="180" x="300" y="250"/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0yvl396" dmnElementRef="InputData_17xnyhj">
+        <dc:Bounds height="45" width="125" x="157" y="447"/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0bbemh7" dmnElementRef="InputData_0nxzade">
+        <dc:Bounds height="45" width="125" x="327" y="447"/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0ve551j" dmnElementRef="InputData_1c9ahxo">
+        <dc:Bounds height="45" width="125" x="507" y="447"/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0bf2tro" dmnElementRef="InformationRequirement_012d53o">
+        <di:waypoint x="570" y="447"/>
+        <di:waypoint x="435" y="350"/>
+        <di:waypoint x="435" y="330"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0l2i5zu" dmnElementRef="InformationRequirement_1wzbsto">
+        <di:waypoint x="390" y="447"/>
+        <di:waypoint x="390" y="350"/>
+        <di:waypoint x="390" y="330"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0mcky6l" dmnElementRef="InformationRequirement_1gxiys2">
+        <di:waypoint x="220" y="447"/>
+        <di:waypoint x="345" y="350"/>
+        <di:waypoint x="345" y="330"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0cy64lw" dmnElementRef="KnowledgeSource_0sa76ie">
+        <dc:Bounds height="63" width="100" x="730" y="48"/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1ce11e7" dmnElementRef="KnowledgeSource_1y6b9ya">
+        <dc:Bounds height="63" width="100" x="730" y="128"/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_0her8u2" dmnElementRef="BusinessKnowledgeModel_1akkqt8">
+        <dc:Bounds height="46" width="135" x="433" y="127"/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1p49c9u" dmnElementRef="AuthorityRequirement_1vwsyky">
+        <di:waypoint x="730" y="94"/>
+        <di:waypoint x="570" y="140"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_0ohinht" dmnElementRef="AuthorityRequirement_0gskmwx">
+        <di:waypoint x="730" y="144"/>
+        <di:waypoint x="570" y="160"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1p4nov3" dmnElementRef="KnowledgeRequirement_123dhv6">
+        <di:waypoint x="493" y="173"/>
+        <di:waypoint x="470" y="240"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

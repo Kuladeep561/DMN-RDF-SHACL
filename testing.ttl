@@ -1,0 +1,39 @@
+
+{prefixes}
+      dmn:prepare_inspections
+    a sh:NodeShape ;
+    sh:target [
+        a sh:SPARQLRule ;
+        sh:comment "Select all of eligible objects and create inspections";
+        sh:construct """        
+ {prefixes}
+
+        CONSTRUCT {
+            ?this ocqa:hasInspection ?Inspection_Number_Of_Risers.
+?Inspection_Number_Of_Risers a <http://www.DMN-RDF.org/DMN#Inspection_Number_Of_Risers>.
+?ISCode a <http://www.DMN-RDF.org/DMN#ISCode>.
+?Agent a <https://w3id.org/digitalconstruction/0.5/Agents#Agent>.
+?InspectionEquipment a <https://w3id.org/ocqa#InspectionEquipment>.
+?one_time a <http://www.DMN-RDF.org/DMN#one_time>.
+?Location a <https://w3id.org/digitalconstruction/0.5/Entities#Location>.
+?InspectionProcedure a <https://w3id.org/ocqa#InspectionProcedure>.
+}
+
+    WHERE{
+        SELECT ?this ?Inspection_Number_Of_Risers ?ISCode ?Agent ?InspectionEquipment ?one_time ?Location ?InspectionProcedure
+ WHERE {
+BIND(IRI(CONCAT("inst:Inspection_Number_Of_Risers_", STR(CEIL((RAND() * 30000))))) as ?Inspection_Number_Of_Risers)
+BIND(IRI(CONCAT("inst:ISCode_", STR(CEIL((RAND() * 30000))))) as ?ISCode)
+BIND(IRI(CONCAT("inst:Agent_", STR(CEIL((RAND() * 30000))))) as ?Agent)
+BIND(IRI(CONCAT("inst:InspectionEquipment_", STR(CEIL((RAND() * 30000))))) as ?InspectionEquipment)
+BIND(IRI(CONCAT("inst:one_time_", STR(CEIL((RAND() * 30000))))) as ?one_time)
+BIND(IRI(CONCAT("inst:Location_", STR(CEIL((RAND() * 30000))))) as ?Location)
+BIND(IRI(CONCAT("inst:InspectionProcedure_", STR(CEIL((RAND() * 30000))))) as ?InspectionProcedure)
+?this a <https://pi.pauwel.be/voc/buildingelement#Stair> .
+?Property a <https://w3id.org/opm#Property> .
+        ?this <http://lbd.arch.rwth-aachen.de/props#actualNumberOfRisers> ?Property .
+        }
+    }
+   """ ;
+    ] ;
+.

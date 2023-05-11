@@ -1,0 +1,203 @@
+
+    @prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix furn: <http://pi.pauwel.be/voc/furniture#> .
+@prefix IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#> .
+@prefix fog: <https://w3id.org/fog#> .
+@prefix dicm: <https://w3id.org/digitalconstruction/0.5/Materials#> .
+@prefix dicp: <https://w3id.org/digitalconstruction/0.5/Processes#> .
+@prefix dmn: <http://www.DMN-RDF.org/DMN#> .
+@prefix dice: <https://w3id.org/digitalconstruction/0.5/Entities#> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix seas: <https://w3id.org/seas/> .
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#> .
+@prefix mep: <http://pi.pauwel.be/voc/distributionelement#> .
+@prefix schema1: <http://schema.org/> .
+@prefix dica: <https://w3id.org/digitalconstruction/0.5/Agents#> .
+@prefix ocqa: <https://w3id.org/ocqa#> .
+@prefix props: <http://lbd.arch.rwth-aachen.de/props#> .
+@prefix beo: <https://pi.pauwel.be/voc/buildingelement#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix smls: <https://w3id.org/def/smls-owl#> .
+@prefix opm: <https://w3id.org/opm#> .
+@prefix lbd: <https://linkebuildingdata.org/LBD#> .
+@prefix inst: <https://www.ugent.be/myAwesomeFirstBIMProject#> .
+    dmn:prepare_inspections
+    a sh:NodeShape ; 
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:comment "Select all of eligible objects";
+        sh:select """
+            
+    PREFIX brick: <https://brickschema.org/schema/Brick#>
+PREFIX csvw: <http://www.w3.org/ns/csvw#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcmitype: <http://purl.org/dc/dcmitype/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dcam: <http://purl.org/dc/dcam/>
+PREFIX doap: <http://usefulinc.com/ns/doap#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX prof: <http://www.w3.org/ns/dx/prof/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX schema: <https://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX furn: <http://pi.pauwel.be/voc/furniture#>
+PREFIX IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#>
+PREFIX fog: <https://w3id.org/fog#>
+PREFIX dicm: <https://w3id.org/digitalconstruction/0.5/Materials#>
+PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+PREFIX dmn: <http://www.DMN-RDF.org/DMN#>
+PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#>
+PREFIX bot: <https://w3id.org/bot#>
+PREFIX seas: <https://w3id.org/seas/>
+PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#>
+PREFIX mep: <http://pi.pauwel.be/voc/distributionelement#>
+PREFIX schema1: <http://schema.org/>
+PREFIX dica: <https://w3id.org/digitalconstruction/0.5/Agents#>
+PREFIX ocqa: <https://w3id.org/ocqa#>
+PREFIX props: <http://lbd.arch.rwth-aachen.de/props#>
+PREFIX beo: <https://pi.pauwel.be/voc/buildingelement#>
+PREFIX unit: <http://qudt.org/vocab/unit/>
+PREFIX smls: <https://w3id.org/def/smls-owl#>
+PREFIX opm: <https://w3id.org/opm#>
+PREFIX lbd: <https://linkebuildingdata.org/LBD#>
+PREFIX inst: <https://www.ugent.be/myAwesomeFirstBIMProject#>
+    SELECT ?this WHERE {
+    ?this a <https://pi.pauwel.be/voc/buildingelement#Stair> .
+?Property a <https://w3id.org/opm#Property> .
+?this <http://lbd.arch.rwth-aachen.de/props#actualNumberOfRisers> ?Property .
+} """; 
+];
+
+    sh:comment "Create new Inspections to the target objects";
+    sh:rule [
+        a sh:SPARQLRule;
+        sh:construct """ 
+        
+ PREFIX brick: <https://brickschema.org/schema/Brick#>
+PREFIX csvw: <http://www.w3.org/ns/csvw#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcmitype: <http://purl.org/dc/dcmitype/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dcam: <http://purl.org/dc/dcam/>
+PREFIX doap: <http://usefulinc.com/ns/doap#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX prof: <http://www.w3.org/ns/dx/prof/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX schema: <https://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX vann: <http://purl.org/vocab/vann/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX furn: <http://pi.pauwel.be/voc/furniture#>
+PREFIX IFC4-PSD: <https://www.linkedbuildingdata.net/IFC4-PSD#>
+PREFIX fog: <https://w3id.org/fog#>
+PREFIX dicm: <https://w3id.org/digitalconstruction/0.5/Materials#>
+PREFIX dicp: <https://w3id.org/digitalconstruction/0.5/Processes#>
+PREFIX dmn: <http://www.DMN-RDF.org/DMN#>
+PREFIX dice: <https://w3id.org/digitalconstruction/0.5/Entities#>
+PREFIX bot: <https://w3id.org/bot#>
+PREFIX seas: <https://w3id.org/seas/>
+PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#>
+PREFIX mep: <http://pi.pauwel.be/voc/distributionelement#>
+PREFIX schema1: <http://schema.org/>
+PREFIX dica: <https://w3id.org/digitalconstruction/0.5/Agents#>
+PREFIX ocqa: <https://w3id.org/ocqa#>
+PREFIX props: <http://lbd.arch.rwth-aachen.de/props#>
+PREFIX beo: <https://pi.pauwel.be/voc/buildingelement#>
+PREFIX unit: <http://qudt.org/vocab/unit/>
+PREFIX smls: <https://w3id.org/def/smls-owl#>
+PREFIX opm: <https://w3id.org/opm#>
+PREFIX lbd: <https://linkebuildingdata.org/LBD#>
+PREFIX inst: <https://www.ugent.be/myAwesomeFirstBIMProject#>
+        CONSTRUCT {
+?Inspection_Number_Of_Risers a <http://www.DMN-RDF.org/DMN#Inspection_Number_Of_Risers>.
+?ISCode a <http://www.DMN-RDF.org/DMN#ISCode>.
+?Agent a <https://w3id.org/digitalconstruction/0.5/Agents#Agent>.
+?InspectionEquipment a <https://w3id.org/ocqa#InspectionEquipment>.
+?one_time a <http://www.DMN-RDF.org/DMN#one_time>.
+?Location a <https://w3id.org/digitalconstruction/0.5/Entities#Location>.
+?InspectionProcedure a <https://w3id.org/ocqa#InspectionProcedure>.
+?Inspection_Number_Of_Risers <https://w3id.org/digitalconstruction/0.5/Entities#isPartOf> ?ISCode.
+?Inspection_Number_Of_Risers <https://w3id.org/digitalconstruction/0.5/Agents#hasAgent> ?Agent.
+?Inspection_Number_Of_Risers <https://w3id.org/ocqa#hasInspectionEquipment> ?InspectionEquipment.
+?Inspection_Number_Of_Risers <https://w3id.org/digitalconstruction/0.5/Processes#hasLocation> ?Location.
+?Inspection_Number_Of_Risers <https://w3id.org/ocqa#hasInspectionProcedure> ?InspectionProcedure.
+?this ocqa:hasInspection ?Inspection_Number_Of_Risers.
+}
+
+    WHERE{
+        SELECT ?this ?Inspection_Number_Of_Risers ?ISCode ?Agent ?InspectionEquipment ?one_time ?Location ?InspectionProcedure
+ WHERE {
+BIND(IRI(CONCAT(STR(inst:), "Inspection_Number_Of_Risers_", STR(CEIL((RAND() * 30000))))) as ?Inspection_Number_Of_Risers)
+BIND(IRI(CONCAT(STR(inst:), "ISCode_", STR(CEIL((RAND() * 30000))))) as ?ISCode)
+BIND(IRI(CONCAT(STR(inst:), "Agent_", STR(CEIL((RAND() * 30000))))) as ?Agent)
+BIND(IRI(CONCAT(STR(inst:), "InspectionEquipment_", STR(CEIL((RAND() * 30000))))) as ?InspectionEquipment)
+BIND(IRI(CONCAT(STR(inst:), "one_time_", STR(CEIL((RAND() * 30000))))) as ?one_time)
+BIND(IRI(CONCAT(STR(inst:), "Location_", STR(CEIL((RAND() * 30000))))) as ?Location)
+BIND(IRI(CONCAT(STR(inst:), "InspectionProcedure_", STR(CEIL((RAND() * 30000))))) as ?InspectionProcedure)
+?this a <https://pi.pauwel.be/voc/buildingelement#Stair> .
+?Property a <https://w3id.org/opm#Property> .
+?this <http://lbd.arch.rwth-aachen.de/props#actualNumberOfRisers> ?Property .
+}
+}""" ; 
+] ; 
+ .
